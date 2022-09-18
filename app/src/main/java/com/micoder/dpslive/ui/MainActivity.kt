@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val fragment = supportFragmentManager.findFragmentById(R.id.newsNavHostFragment)
+        val fragment = supportFragmentManager.findFragmentById(R.id.dpsNavHostFragment)
         binding.bottomNavigationView.setupWithNavController(fragment!!.findNavController())
 
     }
