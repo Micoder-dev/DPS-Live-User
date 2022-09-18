@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/dashboardFragment"
+        android:title="Dashboard"
+        android:icon="@drawable/ic_dashboard" />
+
+    <item android:id="@+id/happeningsFragment"
+        android:title="Happenings"
+        android:icon="@drawable/ic_happenings" />
+
+    <item android:id="@+id/rmsFragment"
+        android:title="RMS"
+        android:icon="@drawable/ic_rms" />
+
+    <item android:id="@+id/quickQuizFragment"
+        android:title="Quick Quiz"
+        android:icon="@drawable/ic_quick_quiz" />
+
+</menu>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dps_nav_graph.xml"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.micoder.dpslive.ui.fragments.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_happeningsFragment"
+            app:destination="@id/happeningsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/happeningsFragment"
+        android:name="com.micoder.dpslive.ui.fragments.HappeningsFragment"
+        android:label="fragment_happenings"
+        tools:layout="@layout/fragment_happenings" >
+        <action
+            android:id="@+id/action_happeningsFragment_to_rmsFragment"
+            app:destination="@id/rmsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rmsFragment"
+        android:name="com.micoder.dpslive.ui.fragments.RmsFragment"
+        android:label="fragment_rms"
+        tools:layout="@layout/fragment_rms" >
+        <action
+            android:id="@+id/action_rmsFragment_to_quickQuizFragment"
+            app:destination="@id/quickQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quickQuizFragment"
+        android:name="com.micoder.dpslive.ui.fragments.QuickQuizFragment"
+        android:label="fragment_quick_quiz"
+        tools:layout="@layout/fragment_quick_quiz" />
+</navigation>
