@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_announcements.xml" value="0.264" />
         <entry key="app/src/main/res/drawable-v24/ic_contact.xml" value="0.2515" />
         <entry key="app/src/main/res/drawable-v24/ic_day_night.xml" value="0.2515" />
         <entry key="app/src/main/res/drawable-v24/ic_info.xml" value="0.2515" />
@@ -11,10 +12,11 @@
         <entry key="app/src/main/res/drawable/rounded_bottom_appbar.xml" value="0.2515" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.34270833333333334" />
         <entry key="app/src/main/res/layout/day_night_switch.xml" value="0.3578125" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.3578125" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_happenings.xml" value="0.34270833333333334" />
         <entry key="app/src/main/res/layout/fragment_quick_quiz.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/fragment_rms.xml" value="0.3578125" />
+        <entry key="app/src/main/res/layout/item_page.xml" value="0.33489583333333334" />
         <entry key="app/src/main/res/layout/navigation_view_header.xml" value="0.3567708333333333" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3567708333333333" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3578125" />
