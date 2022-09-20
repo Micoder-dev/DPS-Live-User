@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "658417609797",
+    "project_id": "dps-live-6edea",
+    "storage_bucket": "dps-live-6edea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658417609797:android:fb8f67ddf28bcebac0c72c",
+        "android_client_info": {
+          "package_name": "com.micoder.dpslive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658417609797-9odmi257ij199kqb8bdhpmrafmqmj0pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyhjby-4W7s_zHzd8QgdyX4Dssr2f0OeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658417609797-9odmi257ij199kqb8bdhpmrafmqmj0pi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
