@@ -12,5 +12,9 @@
     <color name="orangePlus">#FF6930</color>
     <color name="blueBlack">#040720</color>
     <color name="liteBg">#FFE8CF</color>
-    <color name="green">#FFC3AF</color>
+    <color name="sandal">#FFC3AF</color>
+
+    <color name="textColor">#ECE5EC</color>
+    <color name="pinkColor">#FF003B</color>
+    <color name="tansparentColor">#00FFFFFF</color>
 </resources>
