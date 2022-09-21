@@ -151,7 +151,8 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
                 Toast.makeText(context,"No Marks Updated Yet", Toast.LENGTH_SHORT).show()
             }
         }.addOnFailureListener{
-            Toast.makeText(context,"Failed to load data", Toast.LENGTH_SHORT).show()
+            val error = it.message.toString()
+            Toast.makeText(context,error, Toast.LENGTH_SHORT).show()
         }
     }
     private fun retrieveSecondTermMarks() {

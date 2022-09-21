@@ -12,12 +12,24 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.andremion.floatingnavigationview.FloatingNavigationView
 import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.micoder.dpslive.R
 import com.micoder.dpslive.databinding.ActivityMainBinding
+import com.micoder.dpslive.databinding.NavigationViewHeaderBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var headerBinding: NavigationViewHeaderBinding
+
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseDatabase: FirebaseDatabase
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var uid: String
 
     private lateinit var mFloatingNavigationView: FloatingNavigationView
 
@@ -31,9 +43,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // initializing for navHeader
+        val viewHeader = binding.floatingNavigationView.getHeaderView(0)
+        headerBinding = NavigationViewHeaderBinding.bind(viewHeader)
+
+        // Firebase Stuff's
+        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseDatabase = Firebase.database
+        databaseReference = firebaseDatabase.reference
+        val firebaseUser = firebaseAuth.currentUser
+        uid = firebaseUser!!.uid
+
         bottomNavigation()
 
         fab()
+        navigationHeader()
 
         dayNight()
 
@@ -60,6 +84,21 @@ class MainActivity : AppCompatActivity() {
             mFloatingNavigationView.close()
         } else {
             super.onBackPressed()
+        }
+    }
+
+    // Retrieve & Display User Data in NavHeader
+    private fun navigationHeader() {
+        databaseReference.child("users").child(uid).get().addOnSuccessListener {
+            if (it.exists()) {
+                val userName = it.child("name").value.toString()
+                val userEmail = it.child("email").value.toString()
+                headerBinding.profileFabName.text = userName
+                headerBinding.profileFabEmail.text = userEmail
+            }
+        }.addOnFailureListener {
+            val error = it.message.toString()
+            Toast.makeText(this@MainActivity,error, Toast.LENGTH_SHORT).show()
         }
     }
 
