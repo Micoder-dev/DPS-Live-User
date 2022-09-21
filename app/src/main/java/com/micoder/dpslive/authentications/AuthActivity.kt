@@ -39,6 +39,8 @@ class AuthActivity : AppCompatActivity() {
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
 
+    private lateinit var progressBar: ProgressBar
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +76,8 @@ class AuthActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseDatabase = Firebase.database
         databaseReference = firebaseDatabase.reference.child("users")
+
+        progressBar = binding.progressBar
     }
 
     private fun checkUser() {
@@ -114,9 +118,13 @@ class AuthActivity : AppCompatActivity() {
         val authBtnText = authBtn.text.toString()
         if (authBtnText == "Login") {
             // Login Button Clicked
+            progressBar.visibility = View.VISIBLE
+            authBtn.visibility = View.GONE
             loginUser()
         } else {
             // Register Button Clicked
+            progressBar.visibility = View.VISIBLE
+            authBtn.visibility = View.GONE
             registerUser()
         }
     }
@@ -126,18 +134,26 @@ class AuthActivity : AppCompatActivity() {
         val password = loginPassword.text.toString()
 
         if (email.isBlank() || password.isBlank()) {
+            progressBar.visibility = View.GONE
+            authBtn.visibility = View.VISIBLE
             Toast.makeText(this, "Email and Password can't be blank", Toast.LENGTH_SHORT).show()
             return
         }
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
             if (it.isSuccessful) {
+                progressBar.visibility = View.GONE
+                authBtn.visibility = View.VISIBLE
                 startActivity(Intent(this@AuthActivity,MainActivity::class.java))
                 Toast.makeText(this, "Successfully LoggedIn", Toast.LENGTH_SHORT).show()
                 finish()
             } else {
+                progressBar.visibility = View.GONE
+                authBtn.visibility = View.VISIBLE
                 Toast.makeText(this, "Log In failed ", Toast.LENGTH_SHORT).show()
             }
         }.addOnFailureListener {
+            progressBar.visibility = View.GONE
+            authBtn.visibility = View.VISIBLE
             val error = it.toString()
             Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
         }
@@ -150,16 +166,22 @@ class AuthActivity : AppCompatActivity() {
         val confirmPassword = signupConfirmPassword.text.toString()
 
         if (email.isBlank() || password.isBlank() || confirmPassword.isBlank()) {
+            progressBar.visibility = View.GONE
+            authBtn.visibility = View.VISIBLE
             Toast.makeText(this, "Email and Password can't be blank", Toast.LENGTH_SHORT).show()
             return
         }
         if (password != confirmPassword) {
+            progressBar.visibility = View.GONE
+            authBtn.visibility = View.VISIBLE
             Toast.makeText(this, "Password and Confirm Password do not match", Toast.LENGTH_SHORT).show()
             return
         }
 
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) {
             if (it.isSuccessful) {
+                progressBar.visibility = View.GONE
+                authBtn.visibility = View.VISIBLE
 
                 startActivity(Intent(this@AuthActivity,MainActivity::class.java))
                 Toast.makeText(this, "Successfully Singed Up", Toast.LENGTH_SHORT).show()
@@ -178,9 +200,13 @@ class AuthActivity : AppCompatActivity() {
                 finish()
 
             } else {
+                progressBar.visibility = View.GONE
+                authBtn.visibility = View.VISIBLE
                 Toast.makeText(this, "Singed Up Failed!", Toast.LENGTH_SHORT).show()
             }
         }.addOnFailureListener {
+            progressBar.visibility = View.GONE
+            authBtn.visibility = View.VISIBLE
             val error = it.toString()
             Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
         }
