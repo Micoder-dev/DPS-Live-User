@@ -4,7 +4,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.micoder.dpslive.R
 import com.micoder.dpslive.databinding.FragmentCardResultBinding
 import com.ramotion.foldingcell.FoldingCell
@@ -12,6 +18,12 @@ import com.ramotion.foldingcell.FoldingCell
 class CardResultFragment : Fragment(R.layout.fragment_card_result) {
 
     private lateinit var binding: FragmentCardResultBinding
+
+    // firebase auth
+    private lateinit var firebaseAuth: FirebaseAuth
+
+    private lateinit var firebaseDatabase: FirebaseDatabase
+    private lateinit var databaseReference: DatabaseReference
 
     private lateinit var fc1: FoldingCell
     private lateinit var fc2: FoldingCell
@@ -22,9 +34,18 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
     private lateinit var title3: FrameLayout
     private lateinit var title4: FrameLayout
 
+    private lateinit var uid: String
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCardResultBinding.bind(view)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseDatabase = Firebase.database
+        databaseReference = firebaseDatabase.reference
+        // get current user
+        val firebaseUser = firebaseAuth.currentUser
+        uid = firebaseUser!!.uid
 
         fc1 = binding.term1fc
         fc2 = binding.term2fc
@@ -45,37 +66,116 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
     private fun term1() {
         title1.setOnClickListener {
             fc1.toggle(false)
+            retriveFirstTermMarks()
         }
         fc1.setOnClickListener {
             fc1.toggle(false)
         }
     }
-
-
     private fun term2() {
         title2.setOnClickListener {
             fc2.toggle(false)
+            retriveSecondTermMarks()
         }
         fc2.setOnClickListener {
             fc2.toggle(false)
         }
     }
-
     private fun term3() {
         title3.setOnClickListener {
             fc3.toggle(false)
+            retriveThirdTermMarks()
         }
         fc3.setOnClickListener {
             fc3.toggle(false)
         }
     }
-
     private fun term4() {
         title4.setOnClickListener {
             fc4.toggle(false)
+            retriveFourthTermMarks()
         }
         fc4.setOnClickListener {
             fc4.toggle(false)
+        }
+    }
+
+
+
+    private fun retriveFirstTermMarks() {
+        databaseReference.child("users").child(uid).child("results").child("Term1").get().addOnSuccessListener {
+            if (it.exists()){
+                val english = it.child("english").value.toString()
+                val maths = it.child("maths").value.toString()
+                val cs = it.child("cs").value.toString()
+                val practical = it.child("practical").value.toString()
+
+                binding.tvEnglishT1.text = english
+                binding.tvMathsT1.text = maths
+                binding.tvCST1.text = cs
+                binding.tvPracticalT1.text = practical
+            }else{
+                Toast.makeText(context,"No Marks Updated Yet", Toast.LENGTH_SHORT).show()
+            }
+        }.addOnFailureListener{
+            Toast.makeText(context,"Failed to load data", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun retriveSecondTermMarks() {
+        databaseReference.child("users").child(uid).child("results").child("Term2").get().addOnSuccessListener {
+            if (it.exists()){
+                val english = it.child("english").value.toString()
+                val maths = it.child("maths").value.toString()
+                val cs = it.child("cs").value.toString()
+                val practical = it.child("practical").value.toString()
+
+                binding.tvEnglishT2.text = english
+                binding.tvMathsT2.text = maths
+                binding.tvCST2.text = cs
+                binding.tvPracticalT2.text = practical
+            }else{
+                Toast.makeText(context,"No Marks Updated Yet", Toast.LENGTH_SHORT).show()
+            }
+        }.addOnFailureListener{
+            Toast.makeText(context,"Failed to load data", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun retriveThirdTermMarks() {
+        databaseReference.child("users").child(uid).child("results").child("Term3").get().addOnSuccessListener {
+            if (it.exists()){
+                val english = it.child("english").value.toString()
+                val maths = it.child("maths").value.toString()
+                val cs = it.child("cs").value.toString()
+                val practical = it.child("practical").value.toString()
+
+                binding.tvEnglishT3.text = english
+                binding.tvMathsT3.text = maths
+                binding.tvCST3.text = cs
+                binding.tvPracticalT3.text = practical
+            }else{
+                Toast.makeText(context,"No Marks Updated Yet", Toast.LENGTH_SHORT).show()
+            }
+        }.addOnFailureListener{
+            Toast.makeText(context,"Failed to load data", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun retriveFourthTermMarks() {
+        databaseReference.child("users").child(uid).child("results").child("Term4").get().addOnSuccessListener {
+            if (it.exists()){
+                val english = it.child("english").value.toString()
+                val maths = it.child("maths").value.toString()
+                val cs = it.child("cs").value.toString()
+                val practical = it.child("practical").value.toString()
+
+                binding.tvEnglishT4.text = english
+                binding.tvMathsT4.text = maths
+                binding.tvCST4.text = cs
+                binding.tvPracticalT4.text = practical
+            }else{
+                Toast.makeText(context,"No Marks Updated Yet", Toast.LENGTH_SHORT).show()
+            }
+        }.addOnFailureListener{
+            Toast.makeText(context,"Failed to load data", Toast.LENGTH_SHORT).show()
         }
     }
 
