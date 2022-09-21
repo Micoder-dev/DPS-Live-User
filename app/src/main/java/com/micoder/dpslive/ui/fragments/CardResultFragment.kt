@@ -66,7 +66,7 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
     private fun term1() {
         title1.setOnClickListener {
             fc1.toggle(false)
-            retriveFirstTermMarks()
+            retrieveFirstTermMarks()
         }
         fc1.setOnClickListener {
             fc1.toggle(false)
@@ -75,7 +75,7 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
     private fun term2() {
         title2.setOnClickListener {
             fc2.toggle(false)
-            retriveSecondTermMarks()
+            retrieveSecondTermMarks()
         }
         fc2.setOnClickListener {
             fc2.toggle(false)
@@ -84,7 +84,7 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
     private fun term3() {
         title3.setOnClickListener {
             fc3.toggle(false)
-            retriveThirdTermMarks()
+            retrieveThirdTermMarks()
         }
         fc3.setOnClickListener {
             fc3.toggle(false)
@@ -93,7 +93,7 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
     private fun term4() {
         title4.setOnClickListener {
             fc4.toggle(false)
-            retriveFourthTermMarks()
+            retrieveFourthTermMarks()
         }
         fc4.setOnClickListener {
             fc4.toggle(false)
@@ -102,7 +102,7 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
 
 
 
-    private fun retriveFirstTermMarks() {
+    private fun retrieveFirstTermMarks() {
         databaseReference.child("users").child(uid).child("results").child("Term1").get().addOnSuccessListener {
             if (it.exists()){
                 val english = it.child("english").value.toString()
@@ -121,7 +121,7 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
             Toast.makeText(context,"Failed to load data", Toast.LENGTH_SHORT).show()
         }
     }
-    private fun retriveSecondTermMarks() {
+    private fun retrieveSecondTermMarks() {
         databaseReference.child("users").child(uid).child("results").child("Term2").get().addOnSuccessListener {
             if (it.exists()){
                 val english = it.child("english").value.toString()
@@ -140,7 +140,7 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
             Toast.makeText(context,"Failed to load data", Toast.LENGTH_SHORT).show()
         }
     }
-    private fun retriveThirdTermMarks() {
+    private fun retrieveThirdTermMarks() {
         databaseReference.child("users").child(uid).child("results").child("Term3").get().addOnSuccessListener {
             if (it.exists()){
                 val english = it.child("english").value.toString()
@@ -159,7 +159,7 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
             Toast.makeText(context,"Failed to load data", Toast.LENGTH_SHORT).show()
         }
     }
-    private fun retriveFourthTermMarks() {
+    private fun retrieveFourthTermMarks() {
         databaseReference.child("users").child(uid).child("results").child("Term4").get().addOnSuccessListener {
             if (it.exists()){
                 val english = it.child("english").value.toString()
