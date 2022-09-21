@@ -37,7 +37,7 @@
         tools:layout="@layout/fragment_quick_quiz" />
     <fragment
         android:id="@+id/cardResultFragment"
-        android:name="com.micoder.dpslive.ui.fragments.cardResultFragment"
+        android:name="com.micoder.dpslive.ui.fragments.CardResultFragment"
         android:label="cardResultFragment"
         tools:layout="@layout/fragment_card_result"/>
 </navigation>

@@ -10,8 +10,10 @@
         <entry key="app/src/main/res/drawable-v24/ic_info.xml" value="0.2515" />
         <entry key="app/src/main/res/drawable-v24/ic_message.xml" value="0.2515" />
         <entry key="app/src/main/res/drawable-v24/ic_quick_quiz.xml" value="0.2255" />
+        <entry key="app/src/main/res/drawable-v24/ic_up_down_arrow.xml" value="0.244" />
         <entry key="app/src/main/res/drawable-v24/switch_trcks.xml" value="0.244" />
         <entry key="app/src/main/res/drawable/rounded_bottom_appbar.xml" value="0.2515" />
+        <entry key="app/src/main/res/drawable/rounded_corners.xml" value="0.244" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.33645833333333336" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.34270833333333334" />
         <entry key="app/src/main/res/layout/day_night_switch.xml" value="0.3578125" />

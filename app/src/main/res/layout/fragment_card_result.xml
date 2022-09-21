@@ -1,16 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="result fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.ramotion.foldingcell.FoldingCell
+                android:id="@+id/term1fc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:backgroundTint="@color/sandal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:gravity="center"
+                        android:text="Content view1" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:id="@+id/title1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rounded_corners"
+                        android:gravity="center"
+                        android:text="First Term Results"
+                        android:textColor="?colorAccent"
+                        android:textSize="24sp" />
+                </FrameLayout>
+            </com.ramotion.foldingcell.FoldingCell>
+
+            <com.ramotion.foldingcell.FoldingCell
+                android:id="@+id/term2fc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:backgroundTint="@color/sandal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:gravity="center"
+                        android:text="Content view2" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:id="@+id/title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rounded_corners"
+                        android:gravity="center"
+                        android:text="Second Term Results"
+                        android:textColor="?colorAccent"
+                        android:textSize="24sp" />
+                </FrameLayout>
+            </com.ramotion.foldingcell.FoldingCell>
+
+            <com.ramotion.foldingcell.FoldingCell
+                android:id="@+id/term3fc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:backgroundTint="@color/sandal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:gravity="center"
+                        android:text="Content view3" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:id="@+id/title3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rounded_corners"
+                        android:gravity="center"
+                        android:text="Third Term Results"
+                        android:textColor="?colorAccent"
+                        android:textSize="24sp" />
+                </FrameLayout>
+            </com.ramotion.foldingcell.FoldingCell>
+
+            <com.ramotion.foldingcell.FoldingCell
+                android:id="@+id/term4fc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:backgroundTint="@color/sandal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:gravity="center"
+                        android:text="Content view4" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:id="@+id/title4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rounded_corners"
+                        android:gravity="center"
+                        android:text="Fourth Term Results"
+                        android:textColor="?colorAccent"
+                        android:textSize="24sp" />
+                </FrameLayout>
+            </com.ramotion.foldingcell.FoldingCell>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
