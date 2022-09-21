@@ -1,12 +1,14 @@
 package com.micoder.dpslive.ui
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.CompoundButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -18,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.micoder.dpslive.R
+import com.micoder.dpslive.authentications.AuthActivity
 import com.micoder.dpslive.databinding.ActivityMainBinding
 import com.micoder.dpslive.databinding.NavigationViewHeaderBinding
 
@@ -74,8 +77,31 @@ class MainActivity : AppCompatActivity() {
         mFloatingNavigationView = binding.floatingNavigationView
         mFloatingNavigationView.setOnClickListener { mFloatingNavigationView.open() }
         mFloatingNavigationView.setNavigationItemSelectedListener { item ->
-            Toast.makeText(this, item.title.toString() + " Selected!", Toast.LENGTH_SHORT).show()
-            mFloatingNavigationView.close()
+
+            when (item.itemId) {
+                R.id.logOutFab -> {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Logout")
+                    builder.setMessage("Are you sure want to Logout")
+
+                    builder.setPositiveButton("Yes") { dialog, which ->
+                        try {
+                            firebaseAuth.signOut()
+                            startActivity(Intent(this@MainActivity, AuthActivity::class.java))
+                            finish()
+                            Toast.makeText(this, "User Logged out!", Toast.LENGTH_SHORT).show()
+                        } catch (e: Exception) {
+                            Toast.makeText(this, "onClick: Exception " + e.message, Toast.LENGTH_LONG).show()
+                        }
+                    }
+                    builder.setNegativeButton("No") { dialog, which ->
+                        return@setNegativeButton
+                    }
+                    builder.show()
+                    mFloatingNavigationView.close()
+                }
+            }
+
             true
         }
     }
