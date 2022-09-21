@@ -109,11 +109,44 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
                 val maths = it.child("maths").value.toString()
                 val cs = it.child("cs").value.toString()
                 val practical = it.child("practical").value.toString()
-
                 binding.tvEnglishT1.text = english
                 binding.tvMathsT1.text = maths
                 binding.tvCST1.text = cs
                 binding.tvPracticalT1.text = practical
+
+                val pofEnglish = binding.pofEnglishT1
+                val pofMaths = binding.pofMathsT1
+                val pofCs = binding.pofCST1
+                val pofPractical = binding.pofPracticalT1
+                if (english.toInt() >= 35) {
+                    pofEnglish.setText("Pass")
+                    pofEnglish.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofEnglish.setText("Fail")
+                    pofEnglish.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (maths.toInt() >= 35) {
+                    pofMaths.setText("Pass")
+                    pofMaths.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofMaths.setText("Fail")
+                    pofMaths.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (cs.toInt() >= 35) {
+                    pofCs.setText("Pass")
+                    pofCs.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofCs.setText("Fail")
+                    pofCs.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (practical.toInt() >= 35) {
+                    pofPractical.setText("Pass")
+                    pofPractical.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofPractical.setText("Fail")
+                    pofPractical.setTextColor(resources.getColor(R.color.red,null))
+                }
+
             }else{
                 Toast.makeText(context,"No Marks Updated Yet", Toast.LENGTH_SHORT).show()
             }
@@ -128,11 +161,43 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
                 val maths = it.child("maths").value.toString()
                 val cs = it.child("cs").value.toString()
                 val practical = it.child("practical").value.toString()
-
                 binding.tvEnglishT2.text = english
                 binding.tvMathsT2.text = maths
                 binding.tvCST2.text = cs
                 binding.tvPracticalT2.text = practical
+
+                val pofEnglish = binding.pofEnglishT2
+                val pofMaths = binding.pofMathsT2
+                val pofCs = binding.pofCST2
+                val pofPractical = binding.pofPracticalT2
+                if (english.toInt() >= 35) {
+                    pofEnglish.setText("Pass")
+                    pofEnglish.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofEnglish.setText("Fail")
+                    pofEnglish.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (maths.toInt() >= 35) {
+                    pofMaths.setText("Pass")
+                    pofMaths.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofMaths.setText("Fail")
+                    pofMaths.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (cs.toInt() >= 35) {
+                    pofCs.setText("Pass")
+                    pofCs.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofCs.setText("Fail")
+                    pofCs.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (practical.toInt() >= 35) {
+                    pofPractical.setText("Pass")
+                    pofPractical.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofPractical.setText("Fail")
+                    pofPractical.setTextColor(resources.getColor(R.color.red,null))
+                }
             }else{
                 Toast.makeText(context,"No Marks Updated Yet", Toast.LENGTH_SHORT).show()
             }
@@ -147,11 +212,43 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
                 val maths = it.child("maths").value.toString()
                 val cs = it.child("cs").value.toString()
                 val practical = it.child("practical").value.toString()
-
                 binding.tvEnglishT3.text = english
                 binding.tvMathsT3.text = maths
                 binding.tvCST3.text = cs
                 binding.tvPracticalT3.text = practical
+
+                val pofEnglish = binding.pofEnglishT3
+                val pofMaths = binding.pofMathsT3
+                val pofCs = binding.pofCST3
+                val pofPractical = binding.pofPracticalT3
+                if (english.toInt() >= 35) {
+                    pofEnglish.setText("Pass")
+                    pofEnglish.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofEnglish.setText("Fail")
+                    pofEnglish.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (maths.toInt() >= 35) {
+                    pofMaths.setText("Pass")
+                    pofMaths.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofMaths.setText("Fail")
+                    pofMaths.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (cs.toInt() >= 35) {
+                    pofCs.setText("Pass")
+                    pofCs.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofCs.setText("Fail")
+                    pofCs.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (practical.toInt() >= 35) {
+                    pofPractical.setText("Pass")
+                    pofPractical.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofPractical.setText("Fail")
+                    pofPractical.setTextColor(resources.getColor(R.color.red,null))
+                }
             }else{
                 Toast.makeText(context,"No Marks Updated Yet", Toast.LENGTH_SHORT).show()
             }
@@ -166,11 +263,43 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
                 val maths = it.child("maths").value.toString()
                 val cs = it.child("cs").value.toString()
                 val practical = it.child("practical").value.toString()
-
                 binding.tvEnglishT4.text = english
                 binding.tvMathsT4.text = maths
                 binding.tvCST4.text = cs
                 binding.tvPracticalT4.text = practical
+
+                val pofEnglish = binding.pofEnglishT4
+                val pofMaths = binding.pofMathsT4
+                val pofCs = binding.pofCST4
+                val pofPractical = binding.pofPracticalT4
+                if (english.toInt() >= 35) {
+                    pofEnglish.setText("Pass")
+                    pofEnglish.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofEnglish.setText("Fail")
+                    pofEnglish.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (maths.toInt() >= 35) {
+                    pofMaths.setText("Pass")
+                    pofMaths.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofMaths.setText("Fail")
+                    pofMaths.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (cs.toInt() >= 35) {
+                    pofCs.setText("Pass")
+                    pofCs.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofCs.setText("Fail")
+                    pofCs.setTextColor(resources.getColor(R.color.red,null))
+                }
+                if (practical.toInt() >= 35) {
+                    pofPractical.setText("Pass")
+                    pofPractical.setTextColor(resources.getColor(R.color.green,null))
+                } else {
+                    pofPractical.setText("Fail")
+                    pofPractical.setTextColor(resources.getColor(R.color.red,null))
+                }
             }else{
                 Toast.makeText(context,"No Marks Updated Yet", Toast.LENGTH_SHORT).show()
             }
