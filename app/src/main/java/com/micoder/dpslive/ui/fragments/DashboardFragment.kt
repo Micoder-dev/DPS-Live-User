@@ -188,7 +188,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                 }
 
             }else{
-                Toast.makeText(context,"Time Table Updated", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"No Time Table Updated", Toast.LENGTH_SHORT).show()
             }
         }.addOnFailureListener{
             val error = it.message.toString()
