@@ -84,13 +84,20 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                     val st6 = it.child("Sunday6s").value.toString()
                     val st7 = it.child("Sunday7s").value.toString()
 
-                    period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
-                    period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
-                    period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
-                    period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
-                    period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
-                    period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
-                    period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
+                    if (s1 != "null")
+                        period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
+                    if (s2 != "null")
+                        period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
+                    if (s3 != "null")
+                        period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
+                    if (s4 != "null")
+                        period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
+                    if (s5 != "null")
+                        period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
+                    if (s6 != "null")
+                        period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
+                    if (s7 != "null")
+                        period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
                 }
                 if (currentDay == "mon") {
                     val s1 = it.child("Monday1").value.toString()
@@ -109,13 +116,20 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                     val st6 = it.child("Monday6s").value.toString()
                     val st7 = it.child("Monday7s").value.toString()
 
-                    period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
-                    period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
-                    period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
-                    period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
-                    period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
-                    period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
-                    period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
+                    if (s1 != "null")
+                        period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
+                    if (s2 != "null")
+                        period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
+                    if (s3 != "null")
+                        period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
+                    if (s4 != "null")
+                        period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
+                    if (s5 != "null")
+                        period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
+                    if (s6 != "null")
+                        period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
+                    if (s7 != "null")
+                        period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
                 }
                 if (currentDay == "tue") {
                     val s1 = it.child("Tuesday1").value.toString()
@@ -134,13 +148,20 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                     val st6 = it.child("Tuesday6s").value.toString()
                     val st7 = it.child("Tuesday7s").value.toString()
 
-                    period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
-                    period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
-                    period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
-                    period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
-                    period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
-                    period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
-                    period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
+                    if (s1 != "null")
+                        period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
+                    if (s2 != "null")
+                        period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
+                    if (s3 != "null")
+                        period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
+                    if (s4 != "null")
+                        period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
+                    if (s5 != "null")
+                        period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
+                    if (s6 != "null")
+                        period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
+                    if (s7 != "null")
+                        period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
                 }
                 if (currentDay == "wed") {
                     val s1 = it.child("Wednesday1").value.toString()
@@ -159,13 +180,20 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                     val st6 = it.child("Wednesday6s").value.toString()
                     val st7 = it.child("Wednesday7").value.toString()
 
-                    period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
-                    period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
-                    period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
-                    period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
-                    period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
-                    period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
-                    period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
+                    if (s1 != "null")
+                        period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
+                    if (s2 != "null")
+                        period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
+                    if (s3 != "null")
+                        period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
+                    if (s4 != "null")
+                        period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
+                    if (s5 != "null")
+                        period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
+                    if (s6 != "null")
+                        period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
+                    if (s7 != "null")
+                        period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
                 }
                 if (currentDay == "thu") {
                     val s1 = it.child("Thursday1").value.toString()
@@ -184,13 +212,20 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                     val st6 = it.child("Thursday6s").value.toString()
                     val st7 = it.child("Thursday7s").value.toString()
 
-                    period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
-                    period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
-                    period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
-                    period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
-                    period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
-                    period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
-                    period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
+                    if (s1 != "null")
+                        period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
+                    if (s2 != "null")
+                        period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
+                    if (s3 != "null")
+                        period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
+                    if (s4 != "null")
+                        period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
+                    if (s5 != "null")
+                        period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
+                    if (s6 != "null")
+                        period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
+                    if (s7 != "null")
+                        period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
                 }
                 if (currentDay == "fri") {
                     val s1 = it.child("Friday1").value.toString()
@@ -209,13 +244,20 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                     val st6 = it.child("Friday6s").value.toString()
                     val st7 = it.child("Friday7s").value.toString()
 
-                    period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
-                    period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
-                    period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
-                    period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
-                    period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
-                    period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
-                    period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
+                    if (s1 != "null")
+                        period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
+                    if (s2 != "null")
+                        period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
+                    if (s3 != "null")
+                        period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
+                    if (s4 != "null")
+                        period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
+                    if (s5 != "null")
+                        period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
+                    if (s6 != "null")
+                        period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
+                    if (s7 != "null")
+                        period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
                 }
                 if (currentDay == "sat") {
                     val s1 = it.child("Saturday1").value.toString()
@@ -234,13 +276,20 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                     val st6 = it.child("Saturday6s").value.toString()
                     val st7 = it.child("Saturday7s").value.toString()
 
-                    period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
-                    period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
-                    period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
-                    period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
-                    period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
-                    period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
-                    period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
+                    if (s1 != "null")
+                        period1.text = "$t1 - $t2 \n $s1 \n ($st1)"
+                    if (s2 != "null")
+                        period2.text = "$t3 - $t4 \n $s2 \n ($st2)"
+                    if (s3 != "null")
+                        period3.text = "$t5 - $t6 \n $s3 \n ($st3)"
+                    if (s4 != "null")
+                        period4.text = "$t7 - $t8 \n $s4 \n ($st4)"
+                    if (s5 != "null")
+                        period5.text = "$t9 - $t10 \n $s5 \n ($st5)"
+                    if (s6 != "null")
+                        period6.text = "$t11 - $t12 \n $s6 \n ($st6)"
+                    if (s7 != "null")
+                        period7.text = "$t13 - $t14 \n $s7 \n ($st7)"
                 }
 
             }else{
