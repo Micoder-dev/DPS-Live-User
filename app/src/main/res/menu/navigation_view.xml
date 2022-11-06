@@ -11,11 +11,6 @@
             android:id="@+id/contactFab"
             android:icon="@drawable/ic_contact"
             android:title="Contact Us"/>
-        <item
-            android:id="@+id/nightModeFab"
-            android:icon="@drawable/ic_day_night"
-            android:title="Dark Mode"
-            app:actionLayout="@layout/day_night_switch"/>
     </group>
 
     <item
