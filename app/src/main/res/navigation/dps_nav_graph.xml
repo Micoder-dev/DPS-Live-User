@@ -16,7 +16,18 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToSaveState="true"/>
+        <action
+            android:id="@+id/action_dashboardFragment_to_attendanceFragment"
+            app:destination="@id/attendanceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToSaveState="true" />
     </fragment>
     <fragment
         android:id="@+id/happeningsFragment"
@@ -40,4 +51,9 @@
         android:name="com.micoder.dpslive.ui.fragments.CardResultFragment"
         android:label="cardResultFragment"
         tools:layout="@layout/fragment_card_result"/>
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="com.micoder.dpslive.ui.fragments.AttendanceFragment"
+        android:label="fragment_attendance"
+        tools:layout="@layout/fragment_attendance" />
 </navigation>

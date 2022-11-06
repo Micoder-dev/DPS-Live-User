@@ -36,6 +36,9 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         binding!!.result.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_cardResultFragment)
         }
+        binding!!.attendance.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_attendanceFragment)
+        }
 
         currentDay()
 
