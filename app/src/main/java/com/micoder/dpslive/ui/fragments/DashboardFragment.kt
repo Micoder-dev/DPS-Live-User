@@ -69,7 +69,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
             }
             .setPositiveButton("Select") {dialog, which ->
                 SP(requireContext()).put_data("selectedclass",selectedClass)
-
+                requireActivity().recreate()
                 getPeriods()
             }
             .show()
