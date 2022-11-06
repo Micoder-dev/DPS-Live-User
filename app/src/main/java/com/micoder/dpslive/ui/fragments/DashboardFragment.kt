@@ -5,12 +5,14 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.micoder.dpslive.R
 import com.micoder.dpslive.databinding.FragmentDashboardBinding
+import com.micoder.dpslive.utils.SP
 import java.util.*
 
 class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
@@ -21,6 +23,8 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
 
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
+
+    var selectedClass: String = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,8 +39,40 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
 
         currentDay()
 
-        getPeriods()
+        checkClass()
 
+    }
+
+
+    private fun checkClass() {
+        if (SP(requireContext()).get_data("selectedclass") == "") {
+            showAD()
+        }
+        else {
+            Toast.makeText(context,"Selected class: ${SP(requireContext()).get_data("selectedclass")}",Toast.LENGTH_LONG).show()
+            selectedClass = SP(requireContext()).get_data("selectedclass")
+            getPeriods()
+        }
+    }
+
+    private fun showAD() {
+        var selectedClassItemIndex = 0
+        val classes = arrayOf("Class 1","Class 2","Class 3","Class 4","Class 5","Class 6","Class 7","Class 8","Class 9","Class 10","Class 11","Class 12")
+        var selectedClass = classes[selectedClassItemIndex]
+
+        MaterialAlertDialogBuilder(requireContext(), R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Background)
+            .setTitle("Select your Class")
+            .setCancelable(false)
+            .setSingleChoiceItems(classes, selectedClassItemIndex) {dialog, which ->
+                selectedClassItemIndex = which
+                selectedClass = classes[which]
+            }
+            .setPositiveButton("Select") {dialog, which ->
+                SP(requireContext()).put_data("selectedclass",selectedClass)
+
+                getPeriods()
+            }
+            .show()
     }
 
     private fun getPeriods() {
@@ -49,7 +85,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         val period6 = binding!!.period6
         val period7 = binding!!.period7
 
-        databaseReference.child("timetable").get().addOnSuccessListener {
+        databaseReference.child("timetable").child(selectedClass).get().addOnSuccessListener {
             if (it.exists()) {
 
                 val t1 = it.child("timeslot1").value.toString()

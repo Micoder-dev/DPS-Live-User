@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.andremion.floatingnavigationview.FloatingNavigationView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -23,6 +24,7 @@ import com.micoder.dpslive.R
 import com.micoder.dpslive.authentications.AuthActivity
 import com.micoder.dpslive.databinding.ActivityMainBinding
 import com.micoder.dpslive.databinding.NavigationViewHeaderBinding
+import com.micoder.dpslive.utils.SP
 
 class MainActivity : AppCompatActivity() {
 
@@ -64,6 +66,30 @@ class MainActivity : AppCompatActivity() {
 
         dayNight()
 
+        binding.selectClassIV.setOnClickListener {
+            showAD()
+        }
+
+    }
+
+    private fun showAD() {
+        var selectedClassItemIndex = 0
+        val classes = arrayOf("Class 1","Class 2","Class 3","Class 4","Class 5","Class 6","Class 7","Class 8","Class 9","Class 10","Class 11","Class 12")
+        var selectedClass = classes[selectedClassItemIndex]
+
+        MaterialAlertDialogBuilder(this, R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Background)
+            .setTitle("Classes")
+            .setCancelable(false)
+            .setSingleChoiceItems(classes, selectedClassItemIndex) {dialog, which ->
+                selectedClassItemIndex = which
+                selectedClass = classes[which]
+            }
+            .setPositiveButton("Select") {dialog, which ->
+                SP(this).put_data("selectedclass",selectedClass)
+                Toast.makeText(this,"$selectedClass Selected", Toast.LENGTH_SHORT).show()
+                recreate()
+            }
+            .show()
     }
 
     // Bottom Navigation View

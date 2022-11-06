@@ -70,10 +70,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/selectClassIV"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_message"
+                android:src="@drawable/ic_class"
                 app:layout_constraintBottom_toBottomOf="@+id/myToolbar"
                 app:layout_constraintEnd_toEndOf="@+id/myToolbar"
                 app:layout_constraintTop_toTopOf="@+id/myToolbar"
