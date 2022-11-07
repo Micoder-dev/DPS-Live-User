@@ -114,6 +114,12 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
                 binding.tvCST1.text = cs
                 binding.tvPracticalT1.text = practical
 
+                // Avg
+                val total = english.toInt() + maths.toInt() + cs.toInt() + practical.toInt()
+                val totalSize = it.childrenCount
+                val average: Float = total.toFloat() / totalSize
+                binding.tvAvg1.text = average.toString() + "%"
+
                 val pofEnglish = binding.pofEnglishT1
                 val pofMaths = binding.pofMathsT1
                 val pofCs = binding.pofCST1
@@ -167,6 +173,12 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
                 binding.tvCST2.text = cs
                 binding.tvPracticalT2.text = practical
 
+                // Avg
+                val total = english.toInt() + maths.toInt() + cs.toInt() + practical.toInt()
+                val totalSize = it.childrenCount
+                val average: Float = total.toFloat() / totalSize
+                binding.tvAvg2.text = average.toString() + "%"
+
                 val pofEnglish = binding.pofEnglishT2
                 val pofMaths = binding.pofMathsT2
                 val pofCs = binding.pofCST2
@@ -218,6 +230,12 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
                 binding.tvCST3.text = cs
                 binding.tvPracticalT3.text = practical
 
+                // Avg
+                val total = english.toInt() + maths.toInt() + cs.toInt() + practical.toInt()
+                val totalSize = it.childrenCount
+                val average: Float = total.toFloat() / totalSize
+                binding.tvAvg3.text = average.toString() + "%"
+
                 val pofEnglish = binding.pofEnglishT3
                 val pofMaths = binding.pofMathsT3
                 val pofCs = binding.pofCST3
@@ -268,6 +286,12 @@ class CardResultFragment : Fragment(R.layout.fragment_card_result) {
                 binding.tvMathsT4.text = maths
                 binding.tvCST4.text = cs
                 binding.tvPracticalT4.text = practical
+
+                // Avg
+                val total = english.toInt() + maths.toInt() + cs.toInt() + practical.toInt()
+                val totalSize = it.childrenCount
+                val average: Float = total.toFloat() / totalSize
+                binding.tvAvg4.text = average.toString() + "%"
 
                 val pofEnglish = binding.pofEnglishT4
                 val pofMaths = binding.pofMathsT4
